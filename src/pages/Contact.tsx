@@ -1,19 +1,9 @@
-'use client';
-
 import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { useState } from 'react';
 import { supabase } from '../lib/supabase';
 
-// Define the type for contact form data
-interface ContactFormData {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
-
 export default function Contact() {
-  const [formData, setFormData] = useState<ContactFormData>({
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
@@ -37,26 +27,22 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
     
     try {
-      // Insert the form data into the Supabase contacts table
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('contacts')
         .insert([
-          { 
+          {
             name: formData.name,
             email: formData.email,
             subject: formData.subject,
-            message: formData.message,
-            created_at: new Date().toISOString()
+            message: formData.message
           }
         ]);
-      
-      if (error) {
-        throw error;
-      }
-      
-      // Show success message
+
+      if (error) throw error;
+
       setSubmitStatus({
         success: true,
         message: "Thank you! Your message has been sent successfully."
@@ -69,17 +55,16 @@ export default function Contact() {
         subject: '',
         message: ''
       });
-      
+
       // Clear success message after 5 seconds
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
-      
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Form submission error:', error);
       setSubmitStatus({
         success: false,
-        message: "Sorry, there was an error sending your message. Please try again."
+        message: error instanceof Error ? error.message : "Failed to send message"
       });
     } finally {
       setIsSubmitting(false);
@@ -123,7 +108,7 @@ export default function Contact() {
               </div>
               <h3 className="text-xl font-bold">Phone</h3>
               <a href="tel:+251925546881" className="text-gray-400 hover:text-[#00ff9d] transition-colors">
-              +251925546881
+                +251925546881
               </a>
             </div>
           </div>
@@ -234,7 +219,7 @@ export default function Contact() {
                       href="mailto:dagimdana1@gmail.com" 
                       className="text-gray-400 hover:text-[#00ff9d] transition-colors"
                     >
-                     Connect on Email
+                      Connect on Email
                     </a>
                   </div>
                 </div>
@@ -374,7 +359,6 @@ export default function Contact() {
     </div>
   );
 }
-
 
 // import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 // import { useState } from 'react';
