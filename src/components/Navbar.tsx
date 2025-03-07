@@ -3,11 +3,11 @@ import { Menu, X, Code2 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 interface NavbarProps {
-  activeSection: string;
+  // activeSection: string;
   isAuthenticated: boolean;
 }
 
-export default function Navbar({ activeSection, isAuthenticated }: NavbarProps) {
+export default function Navbar({ isAuthenticated }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();

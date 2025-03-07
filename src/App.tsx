@@ -24,7 +24,7 @@ function App() {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setIsAuthenticated(!!session);
     });
-    const activeSection = "admin";
+    // const [activeSection, setActiveSection] = useState("admin");  
     return () => subscription.unsubscribe();
   }, []);
 
@@ -36,7 +36,7 @@ function App() {
             path="/*"
             element={
               <>
-                <Navbar isAuthenticated={isAuthenticated} activeSection={activeSection} />
+                {/* <Navbar isAuthenticated={isAuthenticated} activeSection={activeSection} /> */}
                 <div className="flex-grow">
                   <Routes>
                     <Route path="/" element={<Home />} />
