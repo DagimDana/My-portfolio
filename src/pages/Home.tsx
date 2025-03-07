@@ -264,25 +264,25 @@ export default function Home() {
     const setupInteractiveEffect = (profileElement: HTMLDivElement | null) => {
       if (!profileElement) return;
       
-      const handleMouseMove = (e: MouseEvent) => {
-        if (!profileElement) return;
+      // const handleMouseMove = (e: MouseEvent) => {
+      //   if (!profileElement) return;
         
-        const rect = profileElement.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
+      //   const rect = profileElement.getBoundingClientRect();
+      //   const centerX = rect.left + rect.width / 2;
+      //   const centerY = rect.top + rect.height / 2;
         
-        // Calculate distance from center
-        const distX = (e.clientX - centerX) / 20;
-        const distY = (e.clientY - centerY) / 20;
+      //   // Calculate distance from center
+      //   const distX = (e.clientX - centerX) / 20;
+      //   const distY = (e.clientY - centerY) / 20;
         
-        // Limit the tilt effect
-        const maxTilt = 10;
-        const tiltX = Math.max(-maxTilt, Math.min(maxTilt, distY));
-        const tiltY = Math.max(-maxTilt, Math.min(maxTilt, -distX));
+      //   // Limit the tilt effect
+      //   const maxTilt = 10;
+      //   const tiltX = Math.max(-maxTilt, Math.min(maxTilt, distY));
+      //   const tiltY = Math.max(-maxTilt, Math.min(maxTilt, -distX));
         
-        // Apply the tilt effect
-        profileElement.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(${profileElement.style.getPropertyValue('--float-offset') || '0px'})`;
-      };
+      //   // Apply the tilt effect
+      //   profileElement.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(${profileElement.style.getPropertyValue('--float-offset') || '0px'})`;
+      // };
       
       const handleMouseLeave = () => {
         // Reset the transform when mouse leaves

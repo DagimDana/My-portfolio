@@ -20,7 +20,6 @@ interface AdminState {
 }
 
 export default function Admin() {
-  const navigate = useNavigate();
   const [state, setState] = useState<AdminState>({
     session: null,
     messages: [],
