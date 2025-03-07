@@ -142,9 +142,13 @@ I'm also interested in AI, specially the recent developments in the field of LLM
           <p className="text-gray-400 max-w-2xl mx-auto mb-8">
             I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
           </p>
-          <button className="bg-[#00ff9d] text-black px-8 py-4 rounded-full hover:bg-[#00cc7d] transition-colors font-medium text-lg">
-            Let's Connect
-          </button>
+          
+        <button 
+          onClick={() => window.location.href = '/contact'}
+          className="bg-[#00ff9d] text-black px-8 py-4 rounded-full hover:bg-[#00cc7d] transition-colors font-medium text-lg"
+        >
+          Let's Connect
+        </button>
         </div>
       </section>
     </div>

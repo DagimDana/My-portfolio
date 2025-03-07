@@ -28,6 +28,37 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+/* Navigation Styles */
+.nav-link {
+  @apply relative text-gray-300 hover:text-[#00ff9d] transition-colors;
+  padding-bottom: 2px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #00ff9d;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  border-bottom: 1px dashed #00ff9d;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-link.active {
+  @apply text-[#00ff9d];
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
 /* Gradient Text */
 .gradient-text {
   background: linear-gradient(90deg, #00ff9d, #00ccff);
@@ -110,8 +141,7 @@ body {
 
 /* Animations */
 @keyframes float {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
@@ -120,8 +150,7 @@ body {
 }
 
 @keyframes pulse {
-  0%,
-  100% {
+  0%, 100% {
     opacity: 0.5;
     transform: scale(1);
   }

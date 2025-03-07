@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Code2 } from 'lucide-react';
+import { Github, Linkedin, Mail, Code2, Instagram, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
@@ -36,6 +36,24 @@ export default function Footer() {
                 aria-label="LinkedIn Profile"
               >
                 <Linkedin size={18} />
+              </a>
+              <a 
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full border-2 border-[#00ff9d] text-[#00ff9d] hover:bg-[#00ff9d] hover:text-black transition-all duration-300"
+                aria-label="Twitter Profile"
+              >
+                <Twitter size={18} />
+              </a>
+              <a 
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full border-2 border-[#00ff9d] text-[#00ff9d] hover:bg-[#00ff9d] hover:text-black transition-all duration-300"
+                aria-label="Instagram Profile"
+              >
+                <Instagram size={18} />
               </a>
               <a 
                 href="mailto:dagimdana1@gmail.com"
@@ -101,7 +119,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="flex justify-center">
           <p className="text-gray-400 text-sm">
-            © 2025 Dagim Dana. All rights reserved.
+            © {currentYear} Dagim Dana. All rights reserved.
           </p>
         </div>
       </div>

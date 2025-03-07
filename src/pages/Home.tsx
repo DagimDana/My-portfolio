@@ -17,6 +17,17 @@ export default function Home() {
   const [feedbackCount, setFeedbackCount] = useState(0);
   const [completedCount, setCompletedCount] = useState(0);
   
+  // Handle CV download
+  const handleDownloadCV = () => {
+    // Create a link element
+    const link = document.createElement('a');
+    link.href = '/cv.pdf';
+    link.download = 'Dagim-CV.pdf'; // The name that will be used when downloading
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   // Counter animation effect
   useEffect(() => {
     const animateCounter = (
@@ -452,7 +463,10 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-              <button className="group flex items-center gap-2 bg-[#00ff9d] text-black px-6 py-3 rounded-full hover:bg-[#00cc7d] transition-all duration-300">
+              <button 
+                onClick={handleDownloadCV}
+                className="group flex items-center gap-2 bg-[#00ff9d] text-black px-6 py-3 rounded-full hover:bg-[#00cc7d] transition-all duration-300"
+              >
                 <Download size={20} className="group-hover:animate-bounce" />
                 Download CV
               </button>
@@ -588,7 +602,10 @@ export default function Home() {
             I'm currently available for freelance work or full-time positions.
             If you're interested in working together, let's connect!
           </p>
-          <button className="bg-[#00ff9d] text-black px-8 py-4 rounded-full hover:bg-[#00cc7d] transition-colors font-medium text-lg">
+          <button 
+            onClick={() => window.location.href = '/contact'}
+            className="bg-[#00ff9d] text-black px-8 py-4 rounded-full hover:bg-[#00cc7d] transition-colors font-medium text-lg"
+          >
             Get In Touch
           </button>
         </div>
