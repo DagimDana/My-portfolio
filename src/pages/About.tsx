@@ -1,4 +1,4 @@
-import { Code, Database, Globe, Server, Sparkles, Zap } from 'lucide-react';
+import { Code, Database, Server, Sparkles, Zap } from 'lucide-react';
 
 export default function About() {
   const skills = [

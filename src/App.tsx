@@ -36,7 +36,7 @@ function App() {
             path="/*"
             element={
               <>
-                <Navbar isAuthenticated={isAuthenticated} />
+                <Navbar isAuthenticated={isAuthenticated} activeSection={someValue} />
                 <div className="flex-grow">
                   <Routes>
                     <Route path="/" element={<Home />} />
