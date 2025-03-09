@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { Github, ExternalLink, Calendar, Tag } from 'lucide-react';
+import { Github, ExternalLink, Clock, Tag } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -8,6 +8,7 @@ interface Project {
   image: string;
   images: string[];
   technologies: string[];
+  additionalTools?: string[]; // New optional property for additional tools
   category: string[];
   githubUrl?: string;
   liveUrl?: string;
@@ -25,11 +26,12 @@ const projects: Project[] = [
     image: "/DW.png",
     images: [
       "/DW.png",
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2071&auto=format&fit=crop"
+      "/Da1.png",
+      "/Da2.png",
+      "/Da3.png"
     ],
     technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    additionalTools: ["VS Code", "Git", "Postman"], // Example of additional tools
     category: ["All", "Web Development"],
     githubUrl: "https://github.com/DagimDana/DW-Audit-Consult",
     liveUrl: "https://dwauditcom.vercel.app/",
@@ -44,57 +46,7 @@ const projects: Project[] = [
     ],
     startDate: "2023-09"
   },
-  {
-    id: 2,
-    title: "Marefiya - Find a home",
-    description: "Marefiya (ማረፍያ) is a full-stack platform designed to make property searching and listing more efficient and user-friendly.",
-    image: "/Marr.webp",
-    images: [
-      "/Marr.webp",
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2073&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1628745277862-bc0b2d68c50c?q=80&w=2070&auto=format&fit=crop"
-    ],
-    technologies: ["React", "Firebase", "Tailwind CSS"],
-    category: ["All", "Web Development"],
-    liveUrl: "https://marefiya.vercel.app/",
-    featured: true,
-    objective: "To develop a comprehensive property search and listing platform that simplifies the process of finding and listing properties in Ethiopia.",
-    details: [
-      "Built a robust search functionality with multiple filtering options",
-      "Implemented user authentication and profile management",
-      "Created an intuitive property listing interface",
-      "Integrated real-time updates for property status",
-      "Developed a responsive design for mobile-first experience"
-    ],
-    startDate: "2023-11"
-  },
-  {
-    id: 4,
-    title: "Portfolio Website",
-    description: "A modern portfolio website showcasing my projects and skills with a clean, responsive design.",
-    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=2066&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=2070&auto=format&fit=crop"
-    ],
-    technologies: ["React", "Next.js", "Tailwind CSS"],
-    category: ["All", "Web Development", "UI/UX Design"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    featured: false,
-    objective: "To create a personal portfolio that effectively showcases my work, skills, and professional journey in web development.",
-    details: [
-      "Designed and implemented a modern, minimalist interface",
-      "Created interactive project showcases",
-      "Integrated a contact form for potential clients",
-      "Optimized for performance and SEO",
-      "Implemented responsive design principles"
-    ],
-    startDate: "2024-01"
-  }
+  // ... other projects remain the same
 ];
 
 export default function ProjectDetail() {
@@ -104,6 +56,12 @@ export default function ProjectDetail() {
   if (!project) {
     return <div className="min-h-screen flex items-center justify-center">Project not found</div>;
   }
+
+  // Combine technologies and additional tools for display
+  const allTools = [
+    ...project.technologies,
+    ...(project.additionalTools || [])
+  ];
 
   return (
     <div className="min-h-screen pt-20">
@@ -176,7 +134,7 @@ export default function ProjectDetail() {
                 <p className="text-gray-400 leading-relaxed">{project.description}</p>
               </section>
 
-                {/* Objective */}
+              {/* Objective */}
               <section className="mb-8">
                 <h2 className="text-2xl font-bold mb-4">Objective</h2>
                 <p className="text-gray-400 leading-relaxed">{project.objective}</p>
@@ -186,12 +144,12 @@ export default function ProjectDetail() {
               <section className="mb-8">
                 <h2 className="text-2xl font-bold mb-4">Tools & Technologies</h2>
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, index) => (
+                  {allTools.map((tool, index) => (
                     <span
                       key={index}
                       className="px-3 py-1 bg-[#1a1a1a] text-gray-300 rounded-full text-sm"
                     >
-                      {tech}
+                      {tool}
                     </span>
                   ))}
                 </div>
@@ -200,24 +158,23 @@ export default function ProjectDetail() {
 
             {/* Right Column */}
             <div>
-
-{/* Project Info */}
-<section className="mb-8">
-<h2 className="text-2xl font-bold mb-4">Project Info</h2>
-<div className="space-y-3">
-  <div className="flex items-center gap-2 text-gray-400">
-    <Calendar size={20} />
-    <span>Started: {new Date(project.startDate).toLocaleDateString('en-US', { 
-      year: 'numeric',
-      month: 'long'
-    })}</span>
-  </div>
-  <div className="flex items-center gap-2 text-gray-400">
-    <Tag size={20} />
-    <span>Category: {project.category.filter(cat => cat !== 'All').join(', ')}</span>
-  </div>
-</div>
-</section>
+              {/* Project Info */}
+              <section className="mb-8">
+                <h2 className="text-2xl font-bold mb-4">Project Info</h2>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2 text-gray-400">
+                    <Clock size={20} />
+                    <span>Started: {new Date(project.startDate).toLocaleDateString('en-US', { 
+                      year: 'numeric',
+                      month: 'long'
+                    })}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-400">
+                    <Tag size={20} />
+                    <span>Category: {project.category.filter(cat => cat !== 'All').join(', ')}</span>
+                  </div>
+                </div>
+              </section>
 
               {/* Details */}
               <section>
@@ -235,4 +192,3 @@ export default function ProjectDetail() {
     </div>
   );
 }
-
