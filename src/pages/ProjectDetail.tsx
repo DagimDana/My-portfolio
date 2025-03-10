@@ -76,10 +76,9 @@ const projects: Project[] = [
     description: "A modern portfolio website showcasing my projects and skills with a clean, responsive design.",
     image: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     images: [
-      "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=2066&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=2070&auto=format&fit=crop"
+      "/p1",
+      "/p2",
+      "/p3"
     ],
     technologies: ["React", "Next.js", "Tailwind CSS"],
     category: ["All", "Web Development", "UI/UX Design"],
