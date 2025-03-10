@@ -54,8 +54,8 @@ const projects: Project[] = [
     id: 2,
     title: "Marefiya - Find a home",
     description: [
-      "Name: Marefiya - Find a home",
-      "Type: Full-stack Web app",
+      "Name: Marefiya - Find a home\n",
+      "Type: Full-stack Web app\n",
       "Website: https://marefiya.vercel.app"
     ],
     image: "/Marr.webp",
