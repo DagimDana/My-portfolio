@@ -8,7 +8,7 @@ interface Project {
   image: string;
   images: string[];
   technologies: string[];
-  additionalTools?: string[]; // New optional property for additional tools
+  additionalTools?: string[];
   category: string[];
   githubUrl?: string;
   liveUrl?: string;
@@ -31,7 +31,7 @@ const projects: Project[] = [
       "/Da3.png"
     ],
     technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    additionalTools: ["VS Code", "Git", "Postman"], // Example of additional tools
+    additionalTools: ["VS Code", "Git", "Postman"],
     category: ["All", "Web Development"],
     githubUrl: "https://github.com/DagimDana/DW-Audit-Consult",
     liveUrl: "https://dwauditcom.vercel.app/",
@@ -46,7 +46,6 @@ const projects: Project[] = [
     ],
     startDate: "2023-09"
   },
-  
   {
     id: 2,
     title: "Marefiya - Find a home",
@@ -107,7 +106,6 @@ export default function ProjectDetail() {
     return <div className="min-h-screen flex items-center justify-center">Project not found</div>;
   }
 
-  // Combine technologies and additional tools for display
   const allTools = [
     ...project.technologies,
     ...(project.additionalTools || [])
@@ -118,9 +116,10 @@ export default function ProjectDetail() {
       <div className="container mx-auto px-6 py-12">
         {/* Hero Section */}
         <div className="max-w-4xl mx-auto">
-          <div className="flex justify-between items-start mb-8">
+          {/* Title and Links Section */}
+          <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-8">
             <h1 className="text-4xl md:text-5xl font-bold">{project.title}</h1>
-            <div className="flex gap-4">
+            <div className="flex gap-4 md:mt-0">
               {project.githubUrl && (
                 <a
                   href={project.githubUrl}
@@ -129,7 +128,7 @@ export default function ProjectDetail() {
                   className="flex items-center gap-2 bg-[#1a1a1a] text-white hover:text-[#00ff9d] px-4 py-2 rounded-full transition-colors"
                 >
                   <Github size={20} />
-                  <span className="hidden md:inline">Github</span>
+                  <span className="inline md:hidden">Github</span>
                 </a>
               )}
               {project.liveUrl && (
@@ -140,11 +139,12 @@ export default function ProjectDetail() {
                   className="flex items-center gap-2 bg-[#1a1a1a] text-white hover:text-[#00ff9d] px-4 py-2 rounded-full transition-colors"
                 >
                   <ExternalLink size={20} />
-                  <span className="hidden md:inline">Demo</span>
+                  <span className="inline md:hidden">Live Demo</span>
                 </a>
               )}
             </div>
           </div>
+
           <div className="flex flex-wrap gap-4 mb-8">
             {project.technologies.map((tech, index) => (
               <span
@@ -242,6 +242,18 @@ export default function ProjectDetail() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // import { useParams } from 'react-router-dom';
