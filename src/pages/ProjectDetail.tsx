@@ -76,9 +76,9 @@ const projects: Project[] = [
     description: "A modern portfolio website showcasing my projects and skills with a clean, responsive design.",
     image: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     images: [
-      "/p1",
-      "/p2",
-      "/p3"
+      "/p1.png",
+      "/p2.png",
+      "/p3.png"
     ],
     technologies: ["React", "Next.js", "Tailwind CSS"],
     category: ["All", "Web Development", "UI/UX Design"],
