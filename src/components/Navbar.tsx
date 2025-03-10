@@ -3,7 +3,6 @@ import { Menu, X, Code2 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 interface NavbarProps {
-  // activeSection: string;
   isAuthenticated: boolean;
 }
 
@@ -20,6 +19,18 @@ export default function Navbar({ isAuthenticated }: NavbarProps) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
 
   const handleHireMe = () => {
     window.location.href = 'mailto:dagimdana1@gmail.com';
@@ -41,7 +52,7 @@ export default function Navbar({ isAuthenticated }: NavbarProps) {
         </Link>
         
         <button 
-          className="md:hidden text-[#00ff9d]"
+          className="md:hidden text-[#00ff9d] z-50"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -94,11 +105,12 @@ export default function Navbar({ isAuthenticated }: NavbarProps) {
           </button>
         </div>
 
+        {/* Mobile Menu */}
         <div className={`
           md:hidden fixed inset-0 bg-[#0a0a0a] bg-opacity-98 backdrop-blur-lg
           transition-transform duration-300 ease-in-out
           ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}
-        `}>
+        `} style={{ height: '100vh' }}>
           <div className="flex flex-col items-center justify-center h-full gap-8 text-xl">
             <Link 
               to="/" 
