@@ -45,14 +45,15 @@ export default function About() {
       {/* About Hero Section */}
       <section className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 inline-block relative">
           <span className="relative z-10">About </span>
           <span className="relative z-10 gradient-text">Me</span>
+          <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#00ff9d] to-transparent"></span>
           </h1>
           <p className="text-gray-400 text-lg leading-relaxed">
           Hi, I’m Dagim, a computer engineering graduate with several years of experience in web development, specializing in React.js and more recently, Next.js. I also have strong proficiency with the MERN stack and Django. I’m always eager to learn new technologies and take on exciting projects to further expand my skill set.
 
-I'm also interested in AI, specially the recent developments in the field of LLMs. I like to experiment with the recent text and image generation models. I also dabble a little in hardware.
+I'm also interested in AI, specially the recent developments in the field of LLMs. I like to experiment with the recent text and image generation models.
           </p>
           <div className="flex justify-center gap-4 pt-4">
             <div className="px-6 py-3 bg-[#1a1a1a] rounded-full">
@@ -66,10 +67,14 @@ I'm also interested in AI, specially the recent developments in the field of LLM
       </section>
 
       {/* Skills Section */}
-      <section className="container mx-auto px-6 py-20 bg-[#0f0f0f]">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-          Technical <span className="gradient-text">Expertise</span>
+      <section className="container mx-auto px-6 py-20 bg-[#0f0f0f] ">
+      <div className="text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-16 relative inline-block">
+        <span className="relative z-10 ">Technical </span>
+        <span className="relative z-10 gradient-text">Expertise</span>
+        <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#00ff9d] to-transparent"></span>
         </h2>
+        </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
             <div
@@ -99,9 +104,11 @@ I'm also interested in AI, specially the recent developments in the field of LLM
 
       {/* Journey Section */}
       <section className="container mx-auto px-6 py-20">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            My <span className="gradient-text">Journey</span>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-16 inline-block relative">
+          <span className="relative z-10">My </span>
+          <span className="relative z-10 gradient-text">Journey</span>
+          <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#00ff9d] to-transparent"></span>
           </h2>
           <div className="space-y-12">
             <div className="bg-[#1a1a1a] p-8 rounded-xl animate-fade-in">

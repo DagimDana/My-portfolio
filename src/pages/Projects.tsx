@@ -66,9 +66,10 @@ export default function Projects() {
       {/* Projects Hero Section */}
       <section className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 inline-block relative">
           <span className="relative z-10">My </span>
           <span className="relative z-10 gradient-text">Projects</span>
+          <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#00ff9d] to-transparent"></span>
           </h1>
           <p className="text-gray-400 text-lg leading-relaxed">
             Here's a selection of projects I've worked on. Each project represents a unique challenge
