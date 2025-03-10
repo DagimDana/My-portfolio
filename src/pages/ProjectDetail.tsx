@@ -4,7 +4,7 @@ import { Github, ExternalLink, Clock, Tag } from 'lucide-react';
 interface Project {
   id: number;
   title: string;
-  description: string;
+  description: string[];
   image: string;
   images: string[];
   technologies: string[];
@@ -22,7 +22,11 @@ const projects: Project[] = [
   {
     id: 1,
     title: "DESSALEGN WOLDEYESUSS AUTHORIZED ACCOUNTANT AND CONSULTING",
-    description: "A full-featured e-commerce platform with product management, cart functionality, and payment integration.",
+    description: [
+      "Name: Marefiya - Find a home",
+      "Type: Full-stack Web app",
+      "Website: https://marefiya.vercel.app"
+    ],
     image: "/DW.png",
     images: [
       "/DW.png",
@@ -49,7 +53,11 @@ const projects: Project[] = [
   {
     id: 2,
     title: "Marefiya - Find a home",
-    description: "Marefiya (ማረፍያ) is a full-stack platform designed to make property searching and listing more efficient and user-friendly.",
+    description: [
+      "Name: Marefiya - Find a home",
+      "Type: Full-stack Web app",
+      "Website: https://marefiya.vercel.app"
+    ],
     image: "/Marr.webp",
     images: [
       "/Marr.webp",
@@ -70,7 +78,11 @@ const projects: Project[] = [
   {
     id: 4,
     title: "Portfolio Website",
-    description: "A modern portfolio website showcasing my projects and skills with a clean, responsive design.",
+    description:[
+      "Name: Dagim-projects",
+      "Type: Full-stack Web app",
+      "Website: https://marefiya.vercel.app"
+    ],
     image: "/p1.png",
     images: [
       "/p1.png",
