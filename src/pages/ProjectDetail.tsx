@@ -128,7 +128,7 @@ export default function ProjectDetail() {
                   className="flex items-center gap-2 bg-[#1a1a1a] text-white hover:text-[#00ff9d] px-4 py-2 rounded-full transition-colors"
                 >
                   <Github size={20} />
-                  <span className="inline md:hidden">Github</span>
+                  <span className="inline">Github</span>
                 </a>
               )}
               {project.liveUrl && (
@@ -139,7 +139,7 @@ export default function ProjectDetail() {
                   className="flex items-center gap-2 bg-[#1a1a1a] text-white hover:text-[#00ff9d] px-4 py-2 rounded-full transition-colors"
                 >
                   <ExternalLink size={20} />
-                  <span className="inline md:hidden">Live Demo</span>
+                  <span className="inline">Demo</span>
                 </a>
               )}
             </div>
@@ -242,7 +242,6 @@ export default function ProjectDetail() {
     </div>
   );
 }
-
 
 
 
