@@ -56,17 +56,14 @@ const projects: Project[] = [
       "/Mar1.webp",
       "/Mar2.webp"
     ],
-    technologies: ["React", "Firebase", "Tailwind CSS"],
+    technologies: ["Next.js", "TailwindCSS", "Postgresql", "Drizzle", "Git", "Figma" ],
     category: ["All", "Web Development"],
     liveUrl: "https://marefiya.vercel.app/",
     featured: true,
-    objective: "To develop a comprehensive property search and listing platform that simplifies the process of finding and listing properties in Ethiopia.",
+    objective: "The objective of Marefiya was to improve my practical knowledege of Next.js on a large scale project. I was also experimenting with new technologies like Algolia Search, Redis and others.",
     details: [
-      "Built a robust search functionality with multiple filtering options",
-      "Implemented user authentication and profile management",
-      "Created an intuitive property listing interface",
-      "Integrated real-time updates for property status",
-      "Developed a responsive design for mobile-first experience"
+      "Marefiya (ማረፍያ) is a full-stack platform designed to make property searching and listing more efficient and user-friendly. It allows users to search, filter, and save properties based on their preferences, making it easier to find suitable options. For homeowners, the platform provides a streamlined process to list properties, ensuring they can reach potential renters or buyers with minimal effort. Marefiya combines intuitive design with powerful features, creating an organized space where property seekers and owners can connect. With its range of tools, the platform addresses the challenges of navigating the real estate market, offering a simplified solution for both sides.",
+      "At the core of Marefiya’s functionality are several cutting-edge features. It offers full authentication options, allowing users to sign in with credentials or OAuth, powered by NextAuth. The platform's search and filtering capabilities are enhanced with Algolia Search, providing fast and accurate results. Marefiya also includes real-time chat functionality using Redis and Pusher, ensuring smooth communication between users and property owners. Interactive geolocation filtering is made possible with React Leaflet, allowing users to find properties based on their preferred location visually. For homeowners and property managers, comprehensive analytics are displayed through Recharts, providing insights into property views and engagement. These features, along with many others, make Marefiya a powerful tool for anyone involved in property searching or listing."
     ],
     startDate: "2023-11"
   },
