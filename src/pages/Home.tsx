@@ -21,7 +21,7 @@ export default function Home() {
   const handleDownloadCV = () => {
     // Create a link element
     const link = document.createElement('a');
-    link.href = '/cv.pdf';
+    link.href = '/Dagim-Resume.pdf';
     link.download = 'Dagim-CV.pdf'; // The name that will be used when downloading
     document.body.appendChild(link);
     link.click();

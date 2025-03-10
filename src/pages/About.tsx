@@ -12,13 +12,13 @@ export default function About() {
       icon: <Server className="w-6 h-6 text-[#00ff9d]" />,
       title: "Backend Development",
       description: "Creating robust server-side applications and APIs with Node.js and Python.",
-      technologies: ["Node.js", "Express", "Python", "FastAPI"]
+      technologies: ["Node.js", "Express", "Python", "Django"]
     },
     {
       icon: <Database className="w-6 h-6 text-[#00ff9d]" />,
       title: "Database Management",
       description: "Designing and optimizing database structures for scalable applications.",
-      technologies: ["PostgreSQL", "MongoDB", "Redis", "MySQL"]
+      technologies: ["PostgreSQL", "MongoDB", "Supabase", "MySQL"]
     },
     // {
     //   icon: <Globe className="w-6 h-6 text-[#00ff9d]" />,
@@ -46,19 +46,20 @@ export default function About() {
       <section className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            About <span className="gradient-text">Me</span>
+          <span className="relative z-10">About </span>
+          <span className="relative z-10 gradient-text">Me</span>
           </h1>
           <p className="text-gray-400 text-lg leading-relaxed">
-          👋 Hi, I’m Dagim, a computer engineering graduate with several years of experience in web development, specializing in React.js and more recently, Next.js. I also have strong proficiency with the MERN stack and Django. I’m always eager to learn new technologies and take on exciting projects to further expand my skill set.
+          Hi, I’m Dagim, a computer engineering graduate with several years of experience in web development, specializing in React.js and more recently, Next.js. I also have strong proficiency with the MERN stack and Django. I’m always eager to learn new technologies and take on exciting projects to further expand my skill set.
 
 I'm also interested in AI, specially the recent developments in the field of LLMs. I like to experiment with the recent text and image generation models. I also dabble a little in hardware.
           </p>
           <div className="flex justify-center gap-4 pt-4">
             <div className="px-6 py-3 bg-[#1a1a1a] rounded-full">
-              <span className="text-[#00ff9d] font-mono">5+ Years Experience</span>
+              <span className="text-[#00ff9d] font-mono">2 Years Experience</span>
             </div>
             <div className="px-6 py-3 bg-[#1a1a1a] rounded-full">
-              <span className="text-[#00ff9d] font-mono">50+ Projects</span>
+              <span className="text-[#00ff9d] font-mono">2 Projects</span>
             </div>
           </div>
         </div>

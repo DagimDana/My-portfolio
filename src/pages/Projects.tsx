@@ -67,7 +67,8 @@ export default function Projects() {
       <section className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            My <span className="gradient-text">Projects</span>
+          <span className="relative z-10">My </span>
+          <span className="relative z-10 gradient-text">Projects</span>
           </h1>
           <p className="text-gray-400 text-lg leading-relaxed">
             Here's a selection of projects I've worked on. Each project represents a unique challenge
@@ -172,21 +173,21 @@ export default function Projects() {
             <div className="flex justify-center">
               <Code className="w-8 h-8 text-[#00ff9d]" />
             </div>
-            <h3 className="text-3xl font-bold text-white">50+</h3>
+            <h3 className="text-3xl font-bold text-white">2</h3>
             <p className="text-gray-400">Projects Completed</p>
           </div>
           <div className="text-center space-y-2 animate-fade-in" style={{ animationDelay: '0.1s' }}>
             <div className="flex justify-center">
               <Github className="w-8 h-8 text-[#00ff9d]" />
             </div>
-            <h3 className="text-3xl font-bold text-white">1000+</h3>
+            <h3 className="text-3xl font-bold text-white">50+</h3>
             <p className="text-gray-400">Commits</p>
           </div>
           <div className="text-center space-y-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <div className="flex justify-center">
               <ExternalLink className="w-8 h-8 text-[#00ff9d]" />
             </div>
-            <h3 className="text-3xl font-bold text-white">20+</h3>
+            <h3 className="text-3xl font-bold text-white">2</h3>
             <p className="text-gray-400">Live Websites</p>
           </div>
           <div className="text-center space-y-2 animate-fade-in" style={{ animationDelay: '0.3s' }}>
@@ -196,7 +197,7 @@ export default function Projects() {
                 <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
               </svg>
             </div>
-            <h3 className="text-3xl font-bold text-white">15+</h3>
+            <h3 className="text-3xl font-bold text-white">3</h3>
             <p className="text-gray-400">UI/UX Designs</p>
           </div>
         </div>
